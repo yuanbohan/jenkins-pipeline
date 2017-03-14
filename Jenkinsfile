@@ -10,7 +10,7 @@ pipeline {
     post {
         always {
             echo 'I will always say Hello again!'
-            bearychatSend (color: '#FFFF00', message: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+            bearychatSend (channel: '太阳城-内部', color: '#FFFF00', message: "STARTED: Job ${env.JOB_NAME} [${env.BUILD_NUMBER}](${env.BUILD_URL})")
         }
     }
 }
