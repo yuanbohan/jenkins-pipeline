@@ -1,16 +1,20 @@
 pipeline {
     agent any
+    environment {
+        runtime_env =  'stage'
+    }
     stages {
         stage('Example') {
             steps {
-                echo 'Hello Jenkins Pipeline'
+	    	sh 'printenv'
+                echo 'Hello Jenkins Pipeline Step 1'
+                echo 'Hello Jenkins Pipeline Step 2'
             }
         }
     }
     post {
         always {
-            echo 'I will always say Hello again!'
-            bearychatSend (channel: '太阳城-内部', color: '#FFFF00', message: "STARTED: Job ${env.JOB_NAME} [${env.BUILD_NUMBER}](${env.BUILD_URL})")
+            echo 'I will always say Hello!'
         }
     }
 }
