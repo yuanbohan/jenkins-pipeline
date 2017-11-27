@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        runtime_env =  'stage'
+        runtime_env = 'stage'
     }
     stages {
         stage('Example') {
