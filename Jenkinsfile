@@ -10,7 +10,7 @@ pipeline {
     stage('test') {
       steps {
         sh 'printenv'
-        sh './src/hello.sh'
+        sh './scripts/hello.sh'
       }
     }
   }
